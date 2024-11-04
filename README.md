@@ -1,75 +1,94 @@
-<h1>Advanced Java Programs</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hibernate Associations Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
 
-<p>This repository contains various examples and exercises related to advanced Java topics, particularly focused on <strong>Hibernate</strong> ORM framework mappings and <strong>Hibernate Query Language (HQL)</strong>.</p>
+    <h1>Hibernate Associations Example</h1>
 
-<h2>Table of Contents</h2>
-<ul>
-    <li><strong>Hibernate One-to-One Mapping</strong>
-        <ul>
-            <li>Example code and tutorials on how to implement one-to-one relationships using Hibernate.</li>
-        </ul>
-    </li>
-    <li><strong>Hibernate One-to-Many Mapping</strong>
-        <ul>
-            <li>Example code and tutorials on how to implement one-to-many relationships using Hibernate.</li>
-        </ul>
-    </li>
-    <li><strong>Hibernate Basic Configuration</strong>
-        <ul>
-            <li>Configuration files and examples for setting up Hibernate in Java projects.</li>
-        </ul>
-    </li>
-    <li><strong>Hibernate Query Language (HQL)</strong>
-        <ul>
-            <li>Examples demonstrating how to use HQL for querying entities in the database.</li>
-        </ul>
-    </li>
-</ul>
+    <p>This repository demonstrates basic Hibernate associations in Java, including:</p>
+    <ul>
+        <li>One-to-One</li>
+        <li>One-to-Many</li>
+        <li>Many-to-One</li>
+        <li>Many-to-Many</li>
+    </ul>
 
-<h2>Folder Structure</h2>
-<ul>
-    <li><strong>HIBERNATE_1</strong>: Contains basic setup and configuration of Hibernate.</li>
-    <li><strong>Hibernate_One_To_One_Mapping</strong>: Demonstrates one-to-one mapping in Hibernate with step-by-step code examples.</li>
-    <li><strong>Hibernate_One_To_Many_Mapping</strong>: Demonstrates one-to-many mapping in Hibernate with step-by-step code examples.</li>
-    <li><strong>HQL</strong>: Contains example queries using HQL for different operations such as fetching, updating, and deleting entities.</li>
-</ul>
+    <h2>Getting Started</h2>
 
-<h2>Prerequisites</h2>
-<ul>
-    <li><strong>Java JDK</strong> (Version 8 or higher)</li>
-    <li><strong>Maven</strong> or <strong>Gradle</strong> for dependency management</li>
-    <li><strong>Hibernate Core Library</strong></li>
-    <li><strong>MySQL</strong> or any other database management system for testing persistence</li>
-</ul>
+    <h3>Prerequisites</h3>
+    <ul>
+        <li>Java 8 or higher</li>
+        <li>Maven</li>
+        <li>A relational database (e.g., MySQL, PostgreSQL)</li>
+    </ul>
 
-<h2>How to Run</h2>
-<ol>
-    <li>Clone the repository:
-        <pre><code>git clone https://github.com/your_username/Advance_Java.git</code></pre>
-    </li>
-    <li>Navigate to the desired project folder (e.g., <em>Hibernate_One_To_One_Mapping</em>) and build the project:
-        <pre><code>cd Hibernate_One_To_One_Mapping
-mvn clean install</code></pre>
-    </li>
-    <li>Configure the <code>hibernate.cfg.xml</code> file to point to your database.</li>
-    <li>Run the project from your IDE or command line.</li>
-</ol>
+    <h3>Project Structure</h3>
+    <pre><code>
+hibernate-associations/
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       └── com/
+│   │           └── example/
+│   │               ├── model/
+│   │               ├── dao/
+│   │               └── main/
+│   └── resources/
+│       └── hibernate.cfg.xml
+└── pom.xml
+    </code></pre>
 
-<h2>Hibernate Query Language (HQL)</h2>
-<p>HQL is an object-oriented query language similar to SQL but works with Hibernate's persistent objects and their properties.</p>
-<p>Examples in the <strong>HQL</strong> folder include:</p>
-<ul>
-    <li>Basic Select Queries</li>
-    <li>Joins and Associations</li>
-    <li>Aggregation Functions</li>
-    <li>Updating and Deleting Entities using HQL</li>
-</ul>
+    <h2>Associations Overview</h2>
 
-<h2>Resources</h2>
-<ul>
-    <li><a href="https://hibernate.org/orm/" target="_blank">Official Hibernate Documentation</a></li>
-    <li><a href="https://www.oracle.com/java/technologies/persistence-jsp.html" target="_blank">Java Persistence API (JPA)</a></li>
-</ul>
+    <h3>One-to-One</h3>
+    <p>A one-to-one association means that one entity is associated with exactly one instance of another entity. For example, a <code>User</code> can have one <code>Profile</code>.</p>
+
+    <h3>One-to-Many</h3>
+    <p>A one-to-many association means that one entity can be associated with multiple instances of another entity. For example, a <code>Department</code> can have many <code>Employees</code>.</p>
+
+    <h3>Many-to-One</h3>
+    <p>A many-to-one association means that multiple instances of one entity can be associated with a single instance of another entity. For example, an <code>Employee</code> can belong to one <code>Department</code>.</p>
+
+    <h3>Many-to-Many</h3>
+    <p>A many-to-many association means that multiple instances of one entity can be associated with multiple instances of another entity. For example, a <code>Student</code> can enroll in many <code>Courses</code>, and each <code>Course</code> can have many <code>Students</code>.</p>
+
+    <h2>Running the Application</h2>
+    <ol>
+        <li>Clone the repository:</li>
+        <pre><code>git clone https://github.com/yourusername/hibernate-associations.git</code></pre>
+        <li>Configure your database settings in <code>hibernate.cfg.xml</code>.</li>
+        <li>Build and run the application:</li>
+        <pre><code>mvn clean install
+mvn exec:java -Dexec.mainClass="com.example.hibernate.main.Main"</code></pre>
+    </ol>
+
+    <h2>License</h2>
+    <p>This project is licensed under the MIT License.</p>
 
 </body>
 </html>
